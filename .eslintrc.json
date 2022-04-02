@@ -23,6 +23,13 @@
     "node/prefer-promises/dns": "error",
     "node/prefer-promises/fs": "error",
     "strict": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ]
   }
 }
