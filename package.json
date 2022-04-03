@@ -25,5 +25,9 @@
     "eslint-config-htmlacademy": "5.1.0",
     "eslint-plugin-node": "11.1.0",
     "nodemon": "2.0.15"
+  },
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0"
   }
 }

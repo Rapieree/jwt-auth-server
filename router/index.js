@@ -10,4 +10,6 @@ router.get(`/activate/:link`, userController.activate);
 router.get(`/refresh-token`, userController.refresh);
 router.get(`/users`, userController.getUsers);
 
-module.exports = router;
+module.exports = {
+  router,
+};
