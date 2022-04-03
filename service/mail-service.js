@@ -9,7 +9,7 @@ class MailService {
       secure: false,
       auth: {
         user: SMTP_LOGIN,
-        password: SMTP_PASSWORD,
+        pass: SMTP_PASSWORD,
       },
     });
   }

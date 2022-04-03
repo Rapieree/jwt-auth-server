@@ -3,6 +3,7 @@ const uuid = require("uuid");
 const {mailService} = require("./mail-service");
 const {UserModel} = require("../models/user-model");
 const {tokenService} = require("./token-service");
+const {API_URL} = require("../config");
 
 class UserService {
   async registration(email, password) {
@@ -16,7 +17,7 @@ class UserService {
     const activationLink = uuid.v4();
 
     const user = await UserModel.create({email, password: hashPassword, activationLink});
-    await mailService.sendActivationMail(email, activationLink);
+    await mailService.sendActivationMail(email, `${API_URL}/api/activate/${activationLink}`);
 
     const userData = {
       id: user._id,
