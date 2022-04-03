@@ -10,6 +10,7 @@ const {
   SMTP_LOGIN,
   SMTP_PASSWORD,
   API_URL,
+  CLIENT_URL,
 } = (process || {}).env;
 
 module.exports = {
@@ -22,4 +23,5 @@ module.exports = {
   SMTP_LOGIN,
   SMTP_PASSWORD,
   API_URL,
+  CLIENT_URL,
 };

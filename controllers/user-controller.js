@@ -1,4 +1,5 @@
 const {userService} = require("../service/user-service");
+const {CLIENT_URL} = require("../config");
 
 const COOKIE_AGE_REFRESH_TOKEN = 30 * 24 * 60 * 60 * 1000; // 30 days
 
@@ -32,7 +33,9 @@ class UserController {
 
   async activate(req, res, next) {
     try {
-
+      const activationLink = req.params.link;
+      await userService.activate(activationLink);
+      res.redirect(CLIENT_URL);
     } catch (error) {
       console.log(error);
     }

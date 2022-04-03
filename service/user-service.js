@@ -29,6 +29,17 @@ class UserService {
 
     return {...tokens, user: userData};
   }
+
+  async activate(activationLink) {
+    const user = await UserModel.findOne({activationLink}).exec();
+
+    if (!user) {
+      throw new Error(`Некорректная ссылка для активации`);
+    }
+
+    user.isActivated = true;
+    await user.save();
+  }
 }
 
 module.exports = {
